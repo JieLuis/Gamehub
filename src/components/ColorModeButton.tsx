@@ -7,7 +7,9 @@ export const ColorModeButton = () => {
       <Button onClick={toggleColorMode}>
         Toggle {colorMode === "light" ? "Dark" : "Light"}
       </Button>
-      <Text color="white">Dark Mode</Text>
+      <Text whiteSpace="nowrap" color="white">
+        Dark Mode
+      </Text>
     </HStack>
   );
 };
