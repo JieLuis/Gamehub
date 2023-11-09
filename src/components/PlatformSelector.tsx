@@ -1,4 +1,11 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Spinner,
+} from "@chakra-ui/react";
 
 import { BsChevronDown } from "react-icons/bs";
 import usePlatform, { Platform } from "../hooks/usePlatform";
@@ -9,7 +16,7 @@ interface Props {
 }
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const { data, error } = usePlatform();
+  const { data, error, isLoading } = usePlatform();
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={BsChevronDown}>
@@ -17,6 +24,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
       </MenuButton>
       <MenuList>
         {error && error}
+        {isLoading && <Spinner marginY="15px" />}
         {data.map((platform) => (
           <MenuItem
             key={platform.id}
