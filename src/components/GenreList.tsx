@@ -20,7 +20,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   return (
     <>
       <Heading marginBottom={3} fontSize="3xl">
-        Genres
+        流派
       </Heading>
       {error && null}
       {isLoading && <Spinner marginY="15px" />}

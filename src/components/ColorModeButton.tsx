@@ -5,10 +5,10 @@ export const ColorModeButton = () => {
   return (
     <HStack>
       <Button onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
+        切换到 {colorMode === "light" ? "黑夜" : "白天"}
       </Button>
       <Text whiteSpace="nowrap" color="white">
-        Dark Mode
+        黑夜模式
       </Text>
     </HStack>
   );
