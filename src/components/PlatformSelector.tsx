@@ -23,9 +23,8 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         {selectedPlatform?.name || "平台"}
       </MenuButton>
       <MenuList>
-        {error && error}
         {isLoading && <Spinner marginY="15px" />}
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
