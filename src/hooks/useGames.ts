@@ -1,8 +1,7 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { GameQuery } from "../App";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import APIClient, { FetchResponse } from "../service/api-client";
-import { Platform } from "./usePlatforms";
 import useGameQueryStore from "../service/store";
+import { Platform } from "./usePlatforms";
 
 const apiClient = new APIClient<Game>("/games");
 export interface Game {
@@ -12,6 +11,8 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  slug: string;
+  description_raw: string;
 }
 
 const useGames = () => {
