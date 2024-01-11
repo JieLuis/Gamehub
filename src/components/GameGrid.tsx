@@ -4,7 +4,6 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { GameCard } from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "../App";
 import React from "react";
 
 const GameGrid = () => {
@@ -29,15 +28,18 @@ const GameGrid = () => {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
-        {data?.pages.map((page, index) => (
-          <React.Fragment key={index}>
-            {page.results.map((game) => (
-              <GameCardContainer key={game.id}>
-                <GameCard game={game} />
-              </GameCardContainer>
-            ))}
-          </React.Fragment>
-        ))}
+        {data?.pages.map((page, index) => {
+          console.log(data);
+          return (
+            <React.Fragment key={index}>
+              {page.results.map((game) => (
+                <GameCardContainer key={game.id}>
+                  <GameCard game={game} />
+                </GameCardContainer>
+              ))}
+            </React.Fragment>
+          );
+        })}
       </SimpleGrid>
       {hasNextPage && (
         <Button onClick={() => fetchNextPage()} marginY={5}>

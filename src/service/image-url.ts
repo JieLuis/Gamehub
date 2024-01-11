@@ -1,6 +1,6 @@
 import noIamge from "../assets/no-image-placeholder.webp";
 
-const getCropedImageUrl = (url: string) => {
+const getCropedImageUrl = (url?: string) => {
   if (!url) return noIamge;
   const target = "media/";
   const index = url.indexOf(target) + target.length;

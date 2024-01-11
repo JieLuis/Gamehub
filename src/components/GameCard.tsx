@@ -16,7 +16,11 @@ export const GameCard = ({ game }: Props) => {
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={5}>
           <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
+            platforms={
+              game.parent_platforms
+                ? game.parent_platforms.map((p) => p.platform)
+                : []
+            }
           />
           <HStack>
             <Emoji rating={game.rating_top} />
