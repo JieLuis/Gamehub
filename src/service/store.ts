@@ -1,6 +1,13 @@
 import { create } from "zustand";
-import { GameQuery } from "../App";
+import { Genre } from "../entities/Genre";
+import { Platform } from "../entities/Platform";
 
+interface GameQuery {
+  genre?: Genre | null;
+  platform?: Platform | null;
+  sortOrder?: string;
+  searchText?: string;
+}
 interface GameQueryStore {
   gameQuery: GameQuery;
   setSearchText: (searchText: string) => void;
